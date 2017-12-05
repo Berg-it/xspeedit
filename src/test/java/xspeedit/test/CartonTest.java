@@ -9,6 +9,8 @@ import static org.mockito.Mockito.when;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.voyagesncf.xspeedit.service.RobotActuel;
 import com.voyagesncf.xspeedit.utils.UtilsXspeedit;
 
 
@@ -41,6 +43,14 @@ public class CartonTest {
 		assertTrue(vUtilsXspeedit.isValidIntegerSequence(chaineArticle));	
 	}
 	
+	
+	
+	@Test
+	public void testRobotActuel() {
+		
+		RobotActuel vRobotActuel = mock(RobotActuel.class);
+		
+	}
 	
 
 }
