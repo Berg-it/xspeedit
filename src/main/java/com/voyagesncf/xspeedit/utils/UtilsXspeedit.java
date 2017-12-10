@@ -1,5 +1,8 @@
 package com.voyagesncf.xspeedit.utils;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class UtilsXspeedit {
 
 	
@@ -21,6 +24,46 @@ public class UtilsXspeedit {
 		}
 		
 		return true;
+	}
+	
+	/**
+	 * Convertir la chaine d'article en un array d'int
+	 * @param chaineArticleEmballerRobotActuel
+	 * @return
+	 */
+	public int[] conertirChainEnIntegerArray(String chaineArticleEmballerRobotActuel) {
+
+		int[] vResopnse = null;
+		int vIndex=0;
+		vResopnse = new int[chaineArticleEmballerRobotActuel.length()];
+
+		for(char vItem:chaineArticleEmballerRobotActuel.toCharArray()) {
+			vResopnse[vIndex] = vItem-'0'; 
+			vIndex++;
+		}
+		return vResopnse;
+	}
+	
+	/**
+	 * Retounr le nombre de carton utilisé
+	 * @param chaineArticleEmballerRobotActuel
+	 * @return
+	 */
+	public int getNombreCarton(String chaineArticleEmballerRobotActuel) {
+
+		String[] seperated = chaineArticleEmballerRobotActuel.split("\\/");
+		
+		return seperated.length;
+	}
+
+	/**
+	 * Convertir un array de String en une chaine de caractère spéarée par des "/"
+	 * @param arrayInt
+	 * @return
+	 */
+	public String convertArrayIntEnChaine(String[] arrayInt) {
+
+		return Arrays.stream(arrayInt).collect(Collectors.joining("/"));
 	}
 
 }
